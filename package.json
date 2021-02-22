@@ -24,7 +24,7 @@
     "analyze": "cross-env BUNDLE_ANALYZE=both npm run build"
   },
   "author": "Son Le",
-  "license": "ISC",
+  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

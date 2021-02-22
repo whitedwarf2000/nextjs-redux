@@ -1,0 +1,48 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './vars.scss';
+
+html {
+  font-size: 14px;
+  font-family: 'Be Vietnam', sans-serif;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: none;
+  /* Font variant */
+  -webkit-font-variant-ligatures: none;
+  // -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1);
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+}
+
+body.light-mode {
+  --mv-text-color: #{$dark--main};
+
+  --mv-bg-color: #{$light-main};
+
+  --mv-color--200: #{$light--200};
+  --mv-color--100: #{$light--100};
+}
+
+body {
+  --mv-text-color: #{$light-main};
+
+  --mv-bg-color: #{$dark--300};
+
+  --mv-color--200: #{$dark--200};
+  --mv-color--100: #{$dark--100};
+}
+
+body {
+  background-color: var(--mv-bg-color);
+  color: var(--mv-text-color);
+
+  --main-color: #{$main};
+  --static-dark--100: #{$dark--100};
+  --static-dark--300: #{$dark--300};
+  --static-dark--200: #{$dark--200};
+
+  --static-light--main: #{$light-main};
+  --static-dark--main: #{$dark--main};
+}

@@ -4,6 +4,7 @@ const withPlugins = require('next-compose-plugins');
 const withCSS = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
 const withBundleAnalyzer = require('@next/bundle-analyzer');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 /* Enable code below to analyze bundle size */
 
@@ -67,4 +68,18 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([[withCSS], [withSass], [withBundleAnalyzer]], nextConfig);
+module.exports = withPlugins(
+  [
+    [
+      withCSS({
+        webpack(config) {
+          config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
+          return config;
+        },
+      }),
+    ],
+    [withSass],
+    [withBundleAnalyzer],
+  ],
+  nextConfig
+);

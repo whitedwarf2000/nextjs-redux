@@ -14,10 +14,10 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <h1>Home Desktop</h1>
       {isLoading ? <span>Loading...</span> : <h1>{homeData.title}</h1>}
-    </>
+    </div>
   );
 };
 
